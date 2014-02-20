@@ -240,7 +240,18 @@ class Test(unittest.TestCase):
         return
 
     def testSortedList_split_Empty(self):
-        self.assertFalse(True)
+        test_list=[]
+        left_list = []
+        right_list = []
+        sortedList = SortedList()
+        for i in test_list:
+            sortedList.insert(i)
+            
+        left = SortedList()
+        right = SortedList()      
+        sortedList.split(left, right)
+        self.assertEqual(left_list,left._values)
+        self.assertEqual(right_list,right._values)
 
         return
 
@@ -333,8 +344,19 @@ class Test(unittest.TestCase):
         return
 
     def testSortedList_split_Full(self):
-
-        self.assertFalse(True,"I have weird Mr.Brown code so will need to update")
+        test_list=[1,3,5,7,9,2,4,6,8,10]
+        left_list = [1,3,5,7,9]
+        right_list = [2,4,6,8,10]
+        sortedList = SortedList()
+        for i in test_list:
+            sortedList.insert(i)
+            
+        left = SortedList()
+        right = SortedList()      
+        sortedList.split(left, right)
+        self.assertEqual(left_list,left._values)
+        self.assertEqual(right_list,right._values)
+        
 
         return
 
