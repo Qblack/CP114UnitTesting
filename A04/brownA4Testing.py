@@ -266,6 +266,21 @@ class Test(unittest.TestCase):
             self.assertEqual(expected,self.empty_sorted_list[i])
             i+=1
         return
+		
+		
+	def testSortedList_clean_Empty(self):
+        test_list=[]
+        sortedList = SortedList()
+        for i in test_list:
+            sortedList.insert(i)
+        sortedList.clean()
+        
+        clean_list=[]
+        
+        for expected in clean_list:
+            actual = sortedList.remove(expected)
+            self.assertEqual(expected, actual)
+        return
 
 # Full
     def testSortedList_is_empty_Full(self):
@@ -370,6 +385,20 @@ class Test(unittest.TestCase):
         for expected in range(0,10):
             self.assertEqual(expected,self.full_sorted_list[i])
             i+=1
+        return
+		
+    def testSortedList_clean_Full(self):
+        test_list=[1,1,2,3,5,5,10]
+        sortedList = SortedList()
+        for i in test_list:
+            sortedList.insert(i)
+        sortedList.clean()
+        
+        clean_list=[1,2,3,5,10]
+        
+        for expected in clean_list:
+            actual = sortedList.remove(expected)
+            self.assertEqual(expected, actual)
         return
 
 
